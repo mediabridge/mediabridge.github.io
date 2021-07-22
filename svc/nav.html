@@ -1,0 +1,117 @@
+<html>
+<head><title>Services Navigator</title>
+<script language="Javascript">
+
+<!--
+// NOTE:  New Browser detection code, more effecient and allows Netscape 4.0
+//        And the new IE 4.0 which now supports image arrays.
+//
+//  This code is now being used throughout the net, but this is the source
+//  you should refer to for updates.  We're modifying it as the net changes.
+//
+//  Copyright 1996-97 Project Cool, Inc.  Used by the net, with permission but
+//  we would appreciate it if you would give us credit in the source or a link
+//  from your site. This statement must be included in the webpage.
+//  http://www.projectcool.com
+//
+        browser = (((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) >= 3 )) || ((navigator.appName == "Microsoft Internet Explorer") && (parseInt(navigator.appVersion) >= 4 )))
+
+        if ( browser) {
+                normal = new MakeArray(6)
+                over = new MakeArray(6)
+                picture = new MakeArray(7)
+                blurb = new MakeArray(7)
+                
+                normal[1].src = "../images/corp/mbinfom1.gif"
+                normal[2].src = "../images/corp/mbserm1.gif"
+                normal[3].src = "../images/corp/mbprom1.gif"
+                normal[4].src = "../images/corp/mbdevm1.gif"
+        
+                over[1].src = "../images/corp/mbinfor1.gif"
+                over[2].src = "../images/corp/mbserr1.gif"
+                over[3].src = "../images/corp/mbpror1.gif"
+                over[4].src = "../images/corp/mbdevr1.gif"
+        }
+
+      function MakeArray(n) {
+           this.length = n
+           for (var i = 1; i<=n; i++) {
+             this[i] = new Image()
+           }
+           return this
+      }
+      
+      function msover(num) {
+           if ( browser) { 
+             document.images[num+1].src = over[num+1].src
+//           window.status = blurb[num]
+//           document.images[0].src = picture[num].src
+           }
+      }
+
+      function msout(num) {
+           if ( browser) {
+             document.images[num+1].src = normal[num+1].src
+//           document.images[0].src = picture[5].src
+//           window.status = blurb[5]
+           }                   
+      }
+// -->
+
+
+</script>
+
+</head>
+<body bgcolor="#000000">
+
+<table width="100%" border=0 bgcolor="#000000" cellspacing=0 cellpadding=0>
+<tr>
+<td align=center><a 
+  target="_top"
+  href="../front.html"><img 
+  alt="Mediabridge Infosystems" 
+  border=0 
+  src="../images/corp/banmb.gif"></a></td>
+</tr>
+
+<tr>
+<td align=center valign=top><a 
+  target="_top" 
+  href="../info/" 
+  onmouseover="msover(0) ; return true" 
+  onmouseout="msout(0)"><img 
+  src="../images/corp/mbinfom1.gif" 
+  border=0 width=96 alt="Information"></a></td>
+</tr>
+
+<tr>
+<td align=center valign=top><a 
+  target="_top" 
+  href="../svc/"><img 
+  src="../images/corp/mbserr1.gif" 
+  border=0 width=96 alt="Services"></a></td>
+</tr>
+
+<tr>
+<td align=center valign=top><a 
+  target="_top" 
+  href="../prod/" 
+  onmouseover="msover(2) ; return true" 
+  onmouseout="msout(2)"><img 
+  src="../images/corp/mbprom1.gif" 
+  border=0 width=96 alt="Products"></a></td>
+</tr>
+
+<tr>
+<td align=center valign=top><a 
+  target="_top" 
+  href="../dev/" 
+  onmouseover="msover(3) ;return true" 
+  onmouseout="msout(3)"><img 
+  src="../images/corp/mbdevm1.gif" 
+  border=0 width=96 alt="Developers"></a></td>
+</tr>
+</table>
+
+</body>
+</html>
